@@ -6,5 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>웹카페</title>
   </head>
-  <body></body>
+  <body>
+    <!--
+    * header : header.header
+    <header class="header">헤더</header>
+
+    * visual : div.visual || .visual
+    <div class="visual">비주얼</div>
+
+    * main : main.main
+    <main class="main">메인</main>
+
+    * slogan : article.slogan
+    <article class="slogan">슬로건</article>
+
+    * footer : footer.footer
+    <footer class="footer">푸터</footer>
+    -->
+
+    <!-- header.header+div.visual+main.main+article.slogan+footer.footer -->
+    <header class="header">헤더</header>
+
+    <div class="visual">비주얼</div>
+
+    <main class="main">
+      <!-- div.group*3
+      <div class="group"></div>
+      <div class="group"></div>
+      <div class="group"></div>
+      -->
+
+      <!-- div.group.group$*3 -->
+      <div class="group group1">그룹1</div>
+      <div class="group group2">그룹2</div>
+      <div class="group group3">그룹3</div>
+    </main>
+
+    <article class="slogan">슬로건</article>
+
+    <footer class="footer">
+      <div class="footer-inner">푸터</div>
+    </footer>
+  </body>
 </html>
