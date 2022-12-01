@@ -1,6 +1,14 @@
 @import url(./normalize.css);
 @import url(./reset.css);
 
+/* 기본스타일 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* 30px이 940px 안에 포함되어 있음*/
+}
+
+/* 본문스타일 */
 body {
   background: #ffc;
   font-family: "Pretendard Variable", Pretendard, -apple-system,
@@ -17,7 +25,6 @@ body {
 .slogan,
 .footer-inner {
   width: 940px;
-  box-sizing: border-box; /* 30px이 940px 안에 포함되어 있음*/
   margin: 0 auto; /* 0 0 0 auto : 오른쪽 정렬처럼 보여짐 다양한 레이아웃 사용가능 */
 }
 /* 헤더 */
@@ -37,12 +44,53 @@ body {
 .main {
   background: lightblue;
   height: 50vh;
+  display: flow-root; /*모던방식*/
+  /* overflow는 독립적인 블록을 가지려고 한다. */
+  /* BFC 찾아보기 - block format context */
+  /* overflow: hidden; */
+  /* 이중 float시킬때는 부모요소에 float: left; 를 주는 방법도 있다. */
+  /* float: left; */
+  padding: 0 15px;
 }
+
+/*.main::after {
+  content: "";
+  clear: both; /*플롯 양쪽 모두 해제*/
+/*가상선택자는 인라인이기때문에 블록형태로 만들어야함
+  display: block;
+*/
+.group {
+  margin: 0 15px;
+  float: left;
+}
+
+.group1 {
+  background-color: violet;
+  width: 250px;
+}
+.group2 {
+  background-color: salmon;
+  width: 380px;
+}
+.group3 {
+  background-color: gold;
+  width: 190px;
+}
+
+/* .main::before {
+  content: "첫번째 자식 요소 입니다.";
+  color: #000;
+}
+.main::after {
+  content: "마지막 자식 요소 입니다.";
+  color: #000;
+} */
 
 /* 슬로건 */
 .slogan {
   background: lightgreen;
   height: 10vh;
+  clear: both;
 }
 
 /* 푸터 */
