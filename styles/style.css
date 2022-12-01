@@ -10,22 +10,47 @@ body {
   font-weight: 400;
 }
 
+/* 레이아웃 */
+.header,
+.visual,
+.main,
+.slogan,
+.footer-inner {
+  width: 940px;
+  box-sizing: border-box; /* 30px이 940px 안에 포함되어 있음*/
+  margin: 0 auto; /* 0 0 0 auto : 오른쪽 정렬처럼 보여짐 다양한 레이아웃 사용가능 */
+}
+/* 헤더 */
 .header {
   background: pink;
+  padding: 0 30px;
+  height: 15vh;
 }
 
+/* 비주얼 */
 .visual {
   background: orange;
+  height: 10vh;
 }
 
+/* 메인 */
 .main {
   background: lightblue;
+  height: 50vh;
 }
 
+/* 슬로건 */
 .slogan {
   background: lightgreen;
+  height: 10vh;
 }
 
+/* 푸터 */
 .footer {
-  background: lightgrey;
+  background: gray;
+}
+
+.footer-inner {
+  height: 15vh; /* 15vh = 15% */
+  background: lightgray;
 }
