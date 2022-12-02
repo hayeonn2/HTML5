@@ -1,16 +1,22 @@
 @import url(./normalize.css);
 @import url(./reset.css);
 
-/* 기본스타일 */
+/* 기본 스타일 */
 *,
 *::before,
 *::after {
   box-sizing: border-box; /* 30px이 940px 안에 포함되어 있음*/
 }
 
+/* 링크 스타일 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* 본문스타일 */
 body {
-  background: #ccc;
+  background: #212121;
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
@@ -42,10 +48,32 @@ body {
   top: 45px;
   left: 60px;
 }
+
 /* 텍스트 링크 모음 */
 .member {
   background-color: aquamarine;
+  text-align: right;
+  /* 1. 상속을 이용해 공백없애기 - 자식에게 상속시키고 16px줘서 폰트는 나오고 공백삭제 */
+  /* font-size: 0; */
+  padding: 4px 0;
 }
+
+.member li {
+  /* background-color: lightpink; */
+  display: inline-block;
+  /* font-size: 16px; */
+}
+
+.member a {
+  background-color: coral;
+  padding: 6px 10px; /* 터치할 수 있는 영역이 더 커짐 */
+  display: inherit; /* 상속해서 그대로 받아옴 inline-block */
+}
+
+.divider {
+  margin-right: 4px;
+}
+
 /* 비주얼 */
 .visual {
   background: orange;
