@@ -62,7 +62,7 @@ body {
   /* overflow: hidden; */
   /* 이중 float시킬때는 부모요소에 float: left; 를 주는 방법도 있다. */
   /* float: left; */
-  /* padding: 0 15px; */
+  padding: 0 15px;
 }
 
 /*.main::after {
