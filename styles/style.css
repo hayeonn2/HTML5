@@ -43,12 +43,24 @@ body {
 /* 메인 */
 .main {
   background: lightblue;
-  height: 50vh;
+  /* height: 50vh; */
+  min-height: 450px; /* 최소 높이 줘서 레이아웃 유지 */
+  width: 940px;
   display: flex;
   /* stretch 시킴 row: 세로쭉 - column: 가로쭉 */
-  flex-direction: row;
+  /* flex-direction: row; */
   /* 교차축 : 글자만큼 실제 높이만큼 크기만 가짐 (flex-start)교차축 기준 시작점) direction이 가장중요 */
-  /* align-items: flex-start; */
+  align-items: flex-start;
+  /* 줄바꿈을 허용하겠다는 뜻 wrap */
+  /* flex-wrap: nowrap; */
+  /* 동시에 두가지 같이줌! */
+  flex-flow: row wrap;
+  /* 동등하게 여백줌 */
+  /* justify-content: space-evenly; */
+  justify-content: space-between;
+  padding: 30px;
+  /* justify-content: space-around;
+  padding: 0 15px; */
 }
 
 /*.main::after {
@@ -61,18 +73,26 @@ body {
 .group1 {
   background-color: violet;
   width: 250px;
+  /* width: 500px; */
   /* 2 3 1 : 2, 3은 order=0, 1을 줘서 가장 뒤로 : float: left, right 역할 */
   /* order: 2; */
+  /* 2/4 만큼 축소(너비기준) 500일때 1/2 */
+  /* flex-shrink: 2; */
 }
 .group2 {
   background-color: salmon;
   width: 380px;
+  /* 나머지 너비중 1/4 */
+  /* flex-shrink: 1; */
 }
 .group3 {
   background-color: gold;
+  /* 남은 영역을 모두 차지함 */
+  /* flex-grow: 1; */
   width: 190px;
   /* 컨테이너안에서 가장먼저 시작됨. order값은 모두 0인데 -1을 주니까 첫번째마크업한 애보다 앞에오게됨. */
   /* order: -1; */
+  /* flex-shrink: 1; */
 }
 
 /* .main::before {
