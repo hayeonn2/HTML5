@@ -55,9 +55,9 @@ body {
 /* #item (ID selector) - 100점 */
 
 /* .member -> 10점 , li -> 1점, ::before -> 1점 => 12점 */
-.member li::before {
+/* .member li::before {
   content: ":";
-}
+} */
 
 /* .first -> 10점, 1점, ::before -> 1점 => 11점 */
 /* 따라서 위 .member li::before이 더 우선순위라 앞에 : 이 안없어짐 */
@@ -65,8 +65,23 @@ body {
    2. li.first::before 처럼 앞에 li 붙여서 우선순위 같게 만들기 (12점)
    3. .member을 붙여 우선순위 높게 해주기 (21점)
 */
-.member .first::before {
+/* .member .first::before {
   content: "";
+} */
+
+/* .member li:first-child::before {
+  content: "";
+} */
+
+/* n + 3 : 3번째부터 모두 선택 (positive selector) */
+/* -n + 2 : 2부터 앞쪽으로 모두 선택 (negative) */
+.member li:nth-child(n + 2)::before {
+  content: ":";
+  background-color: skyblue;
+}
+.member li:nth-child(n + 2):nth-child(-n + 4) {
+  content: ":";
+  background-color: gold;
 }
 
 /* 비주얼 */
