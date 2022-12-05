@@ -10,7 +10,8 @@
 
 /* 본문스타일 */
 body {
-  background: #ffc;
+  color: #212121;
+  background: #ccc;
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
@@ -40,6 +41,13 @@ body {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
+}
+
+/* 링크 스타일 */
+.member a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: inherit;
 }
 
 /* :before / ::before => first child */
