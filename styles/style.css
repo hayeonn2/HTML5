@@ -1,11 +1,7 @@
 @import url(./normalize.css);
 @import url(./reset.css);
+@import url(./fontello.css);
 
-/* 기본스타일 */
-/* 상속 이슈때문에 before, after도 적용시켜야함
-  전체선택자에만 넣으면 가상선택자에는 적용되지않음.
-  개발자도구에서 확인가능! 계산됨 -> 필터(box-sizing)해서 확인하기
-*/
 *,
 *::before,
 *::after {
@@ -75,14 +71,14 @@ body {
 
 /* n + 3 : 3번째부터 모두 선택 (positive selector) */
 /* -n + 2 : 2부터 앞쪽으로 모두 선택 (negative) */
-.member li:nth-child(n + 2)::before {
+/* .member li:nth-child(n + 2)::before {
   content: ":";
   background-color: skyblue;
-}
-.member li:nth-child(n + 2):nth-child(-n + 4) {
+} */
+/* .member li:nth-child(n + 2):nth-child(-n + 4) {
   content: ":";
   background-color: gold;
-}
+} */
 
 /* 비주얼 */
 .visual {
