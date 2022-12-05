@@ -2,10 +2,14 @@
 @import url(./reset.css);
 
 /* 기본스타일 */
+/* 상속 이슈때문에 before, after도 적용시켜야함
+  전체선택자에만 넣으면 가상선택자에는 적용되지않음.
+  개발자도구에서 확인가능! 계산됨 -> 필터(box-sizing)해서 확인하기
+*/
 *,
 *::before,
 *::after {
-  box-sizing: border-box; /* 30px이 940px 안에 포함되어 있음*/
+  box-sizing: border-box;
 }
 
 /* 본문스타일 */
@@ -29,9 +33,40 @@ body {
 }
 /* 헤더 */
 .header {
-  background: pink;
+  background: #fff;
   padding: 0 30px;
   height: 15vh;
+  border-radius: 0 0 15px 15px;
+}
+
+.member {
+  background-color: pink;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+/* :before / ::before => first child */
+/* :after / ::after => last child */
+
+/* 우선순위 규칙 */
+/* li (Type Selector) - 1점 */
+/* .first (Class Selector) - 10점 */
+/* #item (ID selector) - 100점 */
+
+/* .member -> 10점 , li -> 1점, ::before -> 1점 => 12점 */
+.member li::before {
+  content: ":";
+}
+
+/* .first -> 10점, 1점, ::before -> 1점 => 11점 */
+/* 따라서 위 .member li::before이 더 우선순위라 앞에 : 이 안없어짐 */
+/* 1. !important 붙여서 우선순위 만들기
+   2. li.first::before 처럼 앞에 li 붙여서 우선순위 같게 만들기 (12점)
+   3. .member을 붙여 우선순위 높게 해주기 (21점)
+*/
+.member .first::before {
+  content: "";
 }
 
 /* 비주얼 */
