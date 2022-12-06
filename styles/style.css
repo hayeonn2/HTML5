@@ -1,11 +1,24 @@
 @import url(./normalize.css);
 @import url(./reset.css);
 
+/* 숨김 콘텐츠 */
+.a11y-hidden {
+  background-color: yellow;
+  position: absolute;
+  /* em으로 쓰면 상속받는 특성 상 값이 더 커진다. 스크린리더기가 읽을 수 있음!!
+    display, visibility : hidden은 스크린리더기가 읽지 못한다.
+  */
+  top: -9999em;
+}
 /* 기본 스타일 */
 *,
 *::before,
 *::after {
   box-sizing: border-box; /* 30px이 940px 안에 포함되어 있음*/
+}
+
+html {
+  font-size: 10px;
 }
 
 /* 링크 스타일 */
@@ -16,6 +29,8 @@ a {
 
 /* 본문스타일 */
 body {
+  /* em, rem 단위 사용해보기 : 10px * 1.4 = 14px */
+  font-size: 1.4rem;
   background: #ccc;
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
@@ -33,11 +48,11 @@ body {
   width: 940px;
   margin: 0 auto; /* 0 0 0 auto : 오른쪽 정렬처럼 보여짐 다양한 레이아웃 사용가능 */
 }
+
 /* 헤더 */
 .header {
   background: #fff;
   padding: 0 30px;
-  height: 15vh;
   border-radius: 0 0 15px 15px;
   position: relative; /* 전체적인 레이아웃 유지시켜줌 */
 }
