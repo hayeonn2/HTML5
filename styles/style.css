@@ -3,12 +3,20 @@
 
 /* 숨김 콘텐츠 */
 .a11y-hidden {
-  background-color: yellow;
+  /* position, display 둘다 가능 */
   position: absolute;
+  /* display: inline-block; */
   /* em으로 쓰면 상속받는 특성 상 값이 더 커진다. 스크린리더기가 읽을 수 있음!!
     display, visibility : hidden은 스크린리더기가 읽지 못한다.
   */
-  top: -9999em;
+  /* top: -9999em; */
+  width: 1px;
+  height: 1px;
+  /* 메인메뉴라는 글자가 안보임 */
+  overflow: hidden;
+  /* 구형 브라우저 clip */
+  /* clip: rect(0, 0, 0, 0); */
+  clip-path: polygon(0 0, 0 0, 0 0);
 }
 /* 기본 스타일 */
 *,
