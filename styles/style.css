@@ -16,7 +16,7 @@ a {
 
 /* 본문스타일 */
 body {
-  background: #212121;
+  background: #ccc;
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
@@ -68,6 +68,12 @@ body {
   background-color: coral;
   padding: 6px 10px; /* 터치할 수 있는 영역이 더 커짐 */
   display: inherit; /* 상속해서 그대로 받아옴 inline-block */
+  text-transform: uppercase;
+}
+
+/* 마지막 li 요소에 포함된 a 요소를 선택해 오른쪽 paading값을 0으로 재정의하는 방법 */
+.member li:last-child a {
+  padding-right: 0;
 }
 
 .divider {
