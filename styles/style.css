@@ -51,11 +51,15 @@ body {
 
 /* 텍스트 링크 모음 */
 .member {
-  background-color: aquamarine;
   text-align: right;
   /* 1. 상속을 이용해 공백없애기 - 자식에게 상속시키고 16px줘서 폰트는 나오고 공백삭제 */
   /* font-size: 0; */
   padding: 4px 0;
+  /* position 속성을 이용해 .member 영역을 오른쪽으로 10px 만큼 이동하기 */
+  /* position: relative;
+  right: -10px; */
+  /* transform 속성을 이용해 .member 영역을 오른쪽으로 10px 만큼 이동하기 */
+  transform: translate(10px);
 }
 
 .member li {
@@ -65,16 +69,15 @@ body {
 }
 
 .member a {
-  background-color: coral;
   padding: 6px 10px; /* 터치할 수 있는 영역이 더 커짐 */
   display: inherit; /* 상속해서 그대로 받아옴 inline-block */
   text-transform: uppercase;
 }
 
 /* 마지막 li 요소에 포함된 a 요소를 선택해 오른쪽 paading값을 0으로 재정의하는 방법 */
-.member li:last-child a {
+/* .member li:last-child a {
   padding-right: 0;
-}
+} */
 
 .divider {
   margin-right: 4px;
