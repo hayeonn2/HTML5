@@ -39,7 +39,8 @@ a {
 body {
   /* em, rem 단위 사용해보기 : 10px * 1.4 = 14px */
   font-size: 1.4rem;
-  background: #ccc;
+  background: #ccc
+    linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
@@ -108,7 +109,8 @@ body {
 
 /* 메인메뉴 */
 .menu {
-  border-radius: 0 0 5px 5px;
+  /* currentColor : 상속된 색으로 받는다. body의 컬러로 */
+  border-top: 2px solid currentColor;
   background: #e85e2c
     linear-gradient(
       to bottom,
@@ -118,6 +120,22 @@ body {
       #e85e2c 70%,
       #ef9126 100%
     );
+  border-radius: 0 0 5px 5px;
+  /* menu-item 플롯 사용으로 잃어버린 높이값 되찾기 */
+  display: flow-root;
+  padding-left: 230px;
+}
+
+.menu-item {
+  background-color: aquamarine;
+  float: left;
+}
+
+.sub-menu {
+  background-color: pink;
+  /* 메뉴버튼 크기에 영향을 미치지 않게 하기위해 position 적용 (버튼끼리 붙음) */
+  position: absolute;
+  display: none;
 }
 
 /* 비주얼 */
@@ -180,7 +198,8 @@ body {
 
 /* 푸터 */
 .footer {
-  background: gray;
+  background: #ccc
+    linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
 }
 
 .footer-inner {
