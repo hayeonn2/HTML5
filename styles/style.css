@@ -110,7 +110,7 @@ body {
 }
 
 .navigation {
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 
 /* 메인메뉴 */
@@ -175,7 +175,6 @@ body {
 }
 
 .sub-menu {
-  background-color: pink;
   /* 메뉴버튼 크기에 영향을 미치지 않게 하기위해 position 적용 (버튼끼리 붙음) */
   /* 독립된 BFC가 생김(float했을때 해제) */
   position: absolute;
@@ -203,7 +202,6 @@ body {
 
 .sub-menu li {
   display: inline-block;
-  background-color: lime;
 }
 
 .sub-menu a::before {
@@ -227,6 +225,19 @@ body {
 .sub-menu a:focus::before {
   /* focus : 키보드로 탭 눌렀을때도 변함 */
   content: "\e801";
+}
+
+.sub-menu a {
+  padding: 10px 0px;
+  /* 부모의 li는 인라인블록이므로 자식도 인라인블록을 사용!
+    인라인블록 설정을 해줘야 인라인 설정이 바뀜 (a: 인라인)
+  */
+  display: inline-block;
+}
+
+.sub-menu a:hover,
+.sub-menu a:focus {
+  color: red;
 }
 
 /* 비주얼 */
