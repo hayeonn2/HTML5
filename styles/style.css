@@ -181,6 +181,8 @@ body {
   /* left: 0; */
   top: 47px;
   display: none;
+  /* 메뉴 검정 구분선과 붙어있지 않기 위해 */
+  padding: 4px 0;
 }
 
 .menu-html,
@@ -228,7 +230,7 @@ body {
 }
 
 .sub-menu a {
-  padding: 10px 0px;
+  padding: 6px 0px;
   /* 부모의 li는 인라인블록이므로 자식도 인라인블록을 사용!
     인라인블록 설정을 해줘야 인라인 설정이 바뀜 (a: 인라인)
   */
