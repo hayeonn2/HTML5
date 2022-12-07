@@ -196,6 +196,7 @@ body {
 .menu-archive {
   right: 0;
 }
+
 .is-active .sub-menu {
   display: block;
   /* 줄바꿈 금지! 서브메뉴들이 줄바꿈되지않고 늘려버림 */
@@ -243,9 +244,25 @@ body {
 }
 
 /* 비주얼 */
+
+@keyframes moveEffect {
+  0% {
+    font-size: 12px;
+  }
+  100% {
+    font-size: 24px;
+  }
+}
+
 .visual {
   background: orange;
-  height: 10vh;
+  height: 120px;
+}
+
+.visual-text {
+  background-color: aqua;
+  animation-name: moveEffect;
+  animation-duration: 2000ms;
 }
 
 /* 메인 */
