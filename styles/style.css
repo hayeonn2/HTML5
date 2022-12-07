@@ -225,6 +225,7 @@ body {
 
 .sub-menu a:hover::before,
 .sub-menu a:focus::before {
+  /* focus : 키보드로 탭 눌렀을때도 변함 */
   content: "\e801";
 }
 
