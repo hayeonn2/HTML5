@@ -247,7 +247,8 @@ body {
 @keyframes moveEffect {
   0% {
     font-size: 12px;
-    color: rgba(0, 0, 0, 0);
+    color: hsla(0, 0%, 0%, 0);
+    /* color: rgba(0, 0, 0, 0); */
     /* padding: 0; */
     /* top: 0;
     left: 0; */
@@ -255,7 +256,8 @@ body {
   }
   100% {
     font-size: 24px;
-    color: rgba(0, 0, 0, 1);
+    color: hsla(0, 0%, 0%, 1);
+    /* color: rgba(0, 0, 0, 1); */
     /* padding: 75px 0 0 400px; */
     /* top: 75px;
     left: 400px; */
@@ -276,7 +278,14 @@ body {
   animation-name: moveEffect;
   animation-duration: 2000ms;
   animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
   display: inline-block;
+  /*
+    그냥 띄워놓는 용도로 position을 써도 된다. 만약
+    이동을 할거라면 visual에 position: relative를 줘야함!
+    position도 인라인 블록처럼 사용가능.
+  */
+  /* position: absolute; */
 }
 
 /* 메인 */
