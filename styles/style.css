@@ -108,7 +108,7 @@ body {
   text-transform: uppercase;
 }
 
-/* 마지막 li 요소에 포함된 a 요소를 선택해 오른쪽 paading값을 0으로 재정의하는 방법 */
+/* 마지막 li 요소에 포함된 a 요소를 선택해 오른쪽 padding값을 0으로 재정의하는 방법 */
 /* .member li:last-child a {
   padding-right: 0;
 } */
@@ -273,27 +273,66 @@ body {
   }
 }
 
+@keyframes fadeEffect {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .visual {
   /* background: orange; */
   height: 120px;
   position: relative;
 }
 
+/* 뒤에 꽃 두개 두개씩 깔아놓기 위해 가상선택자 사용(마크업 건들지않고 배경을 이용) */
+.visual::before,
+.visual::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* animation-name: fadeEffect;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite; */
+  /* 1~0까지 1번, 0~1까지 1번 왔다갔다해줌 */
+  /* animation-direction: alternate; */
+  animation: fadeEffect 2000ms alternate infinite;
+}
+
+.visual::before {
+  background: url("./images/ani_flower_01.png") no-repeat 0 -10px,
+    url("./images/ani_flower_02.png") no-repeat 600px 0;
+}
+.visual::after {
+  background: url("./images/ani_flower_03.png") no-repeat 300px 0,
+    url("./images/ani_flower_04.png") no-repeat 800px 0;
+  animation-delay: 1000ms;
+}
+
 .visual-text {
   /* position: absolute; */
   font-family: Georgia, "Times New Roman", Times, serif;
   /* background-color: aqua; */
-  animation-name: moveEffect;
-  animation-duration: 2000ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-  display: inline-block;
+  /* animation-name: moveEffect; */
+  /*animation-duration: 400ms;*/ /* 400ms : normal */
+  /* animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out; */
+  animation: moveEffect 400ms ease-in-out forwards;
+  /* display: inline-block; */
   /*
     그냥 띄워놓는 용도로 position을 써도 된다. 만약
     이동을 할거라면 visual에 position: relative를 줘야함!
     position도 인라인 블록처럼 사용가능.
   */
-  /* position: absolute; */
+  /* absolute에서 relative로 준 이유: before에게 가려지므로 띄우고 z-index로 순서조정 */
+  position: relative;
+  z-index: 1;
 }
 
 /* 메인 */
