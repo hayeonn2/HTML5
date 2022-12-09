@@ -443,6 +443,7 @@ body {
 }
 
 .sign a {
+  /* padding을 주기위해 블록처리 */
   display: block;
   padding: 6px 0;
   letter-spacing: -1px;
