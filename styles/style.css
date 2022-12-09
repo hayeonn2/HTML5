@@ -337,15 +337,16 @@ body {
 
 /* 메인 */
 .main {
-  background: lightblue;
-  height: 50vh;
+  background: #fff;
+  min-height: 50vh;
   display: flow-root; /*모던방식*/
   /* overflow는 독립적인 블록을 가지려고 한다. */
   /* BFC 찾아보기 - block format context */
   /* overflow: hidden; */
   /* 이중 float시킬때는 부모요소에 float: left; 를 주는 방법도 있다. */
   /* float: left; */
-  padding: 0 15px;
+  padding: 30px 15px;
+  border-radius: 15px 15px 0 0;
 }
 
 /*.main::after {
@@ -360,7 +361,6 @@ body {
 }
 
 .group1 {
-  background-color: violet;
   width: 250px;
 }
 .group2 {
@@ -370,6 +370,31 @@ body {
 .group3 {
   background-color: gold;
   width: 190px;
+}
+
+/* 로그인 */
+.login {
+  box-shadow: 5px 5px 0 0 #ccc;
+  background: orange radial-gradient(circle at right top, orange, orangered);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.login-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: gold;
+  padding: 10px 0;
+}
+form fieldset {
+  background-color: #fff;
+}
+form legend {
+  text-indent: -9999px;
+}
+.user-email {
+  outline: 2px solid red;
+  display: inline-block;
 }
 
 /* .main::before {
