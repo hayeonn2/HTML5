@@ -3,7 +3,8 @@
 @import url(./reset.css);
 
 /* 숨김 콘텐츠 */
-.a11y-hidden {
+.a11y-hidden,
+legend {
   /* position, display 둘다 가능 */
   position: absolute;
   /* display: inline-block; */
@@ -381,20 +382,56 @@ body {
 }
 
 .login-title {
-  font-size: 16px;
-  font-weight: bold;
-  color: gold;
-  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ff0;
+  text-indent: 10px;
 }
-form fieldset {
+
+.login-form {
   background-color: #fff;
+  margin-top: 10px;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 10px 0 10px;
 }
-form legend {
-  text-indent: -9999px;
+
+.login-form fieldset {
+  /* 로그인 버튼의 기준 */
+  position: relative;
 }
+
 .user-email {
-  outline: 2px solid red;
+  background-color: lime;
+}
+
+.user-pw {
+  background-color: pink;
+}
+
+.login-form label {
+  background-color: red;
   display: inline-block;
+  /* 4글자만큼 기준 (15*4) */
+  width: 4em;
+}
+
+.login-form input {
+  width: 90px;
+  height: 24px;
+  border: 1px solid #aaa;
+}
+
+.button-login {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 14px 10px;
+}
+
+.sign {
+  background-color: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 0 10px 10px 10px;
 }
 
 /* .main::before {
