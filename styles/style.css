@@ -398,18 +398,16 @@ body {
 .login-form fieldset {
   /* 로그인 버튼의 기준 */
   position: relative;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 5px;
 }
 
-.user-email {
-  background-color: lime;
-}
-
+.user-email,
 .user-pw {
-  background-color: pink;
+  margin-bottom: 5px;
 }
 
 .login-form label {
-  background-color: red;
   display: inline-block;
   /* 4글자만큼 기준 (15*4) */
   width: 4em;
@@ -419,19 +417,42 @@ body {
   width: 90px;
   height: 24px;
   border: 1px solid #aaa;
+  padding: 1px 1px 1px 5px;
 }
 
 .button-login {
   position: absolute;
   top: 0px;
   right: 0px;
-  padding: 14px 10px;
+  height: 53px;
+  background-color: orangered;
+  color: #fff;
+  border: 0;
+  padding: 0 10px;
+  border-radius: 3px;
+  font-size: 13px;
 }
 
 .sign {
   background-color: #fff;
   border-radius: 0 0 5px 5px;
-  padding: 0 10px 10px 10px;
+  padding: 4px 10px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.sign a {
+  display: block;
+  padding: 6px 0;
+  letter-spacing: -1px;
+}
+
+.sign a::before {
+  content: "\e803";
+  margin-right: 8px;
+  color: orangered;
+  font-family: "fontello";
 }
 
 /* .main::before {
