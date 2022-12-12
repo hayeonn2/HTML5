@@ -287,7 +287,7 @@
             <div class="search-form-inner">
               <div class="form-group">
                 <label for="search" class="form-group-label"
-                  ><span class="icon-search" aria-hidden="true"></span
+                  ><span class="icon-right-open" aria-hidden="true"></span
                   >자료검색</label
                 >
                 <input
@@ -298,10 +298,40 @@
                   placeholder="검색어를 입력하세요. 예)HTML5"
                 />
               </div>
-              <button type="submit" class="button-fill button">검색</button>
+              <button type="submit" class="search-button button-fill button">
+                검색
+              </button>
             </div>
           </fieldset>
         </form>
+
+        <div class="board">
+          <ul class="tab-list" role="tablist">
+            <li role="none">
+              <button type="button" class="tab" role="tab">공지사항</button>
+            </li>
+
+            <li role="none">
+              <button type="button" class="tab" role="tab">자료실</button>
+            </li>
+          </ul>
+
+          <div class="notice tab-panel" role="tabpanel">
+            <h2 class="a11y-hidden">공지사항</h2>
+
+            <ul class="board-list"></ul>
+
+            <a href="/" class="board-more icon-plus">더보기</a>
+          </div>
+
+          <div class="archive tab-panel" role="tabpanel">
+            <h2 class="a11y-hidden">자료실</h2>
+
+            <ul class="board-list"></ul>
+
+            <a href="/" class="board-more icon-plus">더보기</a>
+          </div>
+        </div>
       </div>
       <div class="group group3">그룹3</div>
     </main>
