@@ -456,6 +456,45 @@ body {
   font-family: "fontello";
 }
 
+/* 유효성 검사 배너 */
+.validation-list {
+  /* 그림자로부터 떨어져야하므로 20이 아니라 그림자값을 더줘 25px 넣어줌 */
+  margin-top: 25px;
+  /* padding-top: 1px; */
+  /* border: 1px solid red; */
+}
+
+.validation-list li {
+  /*
+    첫번째 li는 마진이 겹친다. (ul: 25, li: 10) -> 25안에 10이 포함된다.
+    마진은 투명해서 겹칠 수 있다. 그러나 ul에 패딩1px이나 보더값1을 주면 겹치지않음 (바리케이트 치는 느낌)
+    normal flow일때는 겹친다 하지만 flex, float를 주면 겹치지않음!!
+  */
+  margin-top: 10px;
+}
+
+.validation-list a {
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+  padding: 8px 15px;
+  border-radius: 30px;
+  border: 1px solid #aaa;
+  display: block;
+  padding-left: 20px;
+  /* padding값 + font-size값  */
+  line-height: 30px;
+}
+
+.validation-list a:hover,
+.validation-list a:focus {
+  color: red;
+}
+
+.validation-list a::before {
+  content: url(./images/validation_icon.png);
+  vertical-align: middle;
+  padding-right: 5px;
+}
+
 /* .main::before {
   content: "첫번째 자식 요소 입니다.";
   color: #000;
