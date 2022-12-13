@@ -664,6 +664,7 @@ body {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  line-height: 1.5;
 }
 
 .board-list a {
@@ -694,6 +695,131 @@ body {
   /* 색상의 농도를 조절하기에 좋음 */
   color: hsla(110, 50%, 30%, 1);
 }
+
+/* 새소식 */
+.news {
+  margin-top: 20px;
+  position: relative;
+  position: relative;
+}
+
+.news::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 80%;
+  height: 1px;
+  background: #aaa linear-gradient(to right, #ccc, #fff);
+}
+
+.news-title {
+  color: #e85e2c;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.news-link {
+  display: block;
+}
+
+.news-item {
+  margin-top: 35px;
+  padding-left: 130px;
+  position: relative;
+}
+
+.news-item-title {
+  font-weight: 500;
+}
+
+.news-item-date {
+  display: block;
+  margin: 5px 0 10px;
+}
+
+.news-item-brief {
+  line-height: 1.5;
+}
+
+.news-item-thumbnail {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  text-align: center;
+}
+
+.news-more {
+  /*
+    position은 블록형태이다. 인라인아님!
+    블록의 성격을 가지고 랜더링 (너비, 높이값 줄 수 있는형태)
+    인라인형태로 오해할 수 있음! 한 줄을 다 가지지 않아서
+  */
+  position: absolute;
+  /* 클릭 면적이 늘어남 */
+  padding: 8px;
+  top: -8px;
+  right: -8px;
+}
+
+/* .news-title {
+  color: #e85e2c;
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+
+.news-title::after {
+  content: "";
+  display: block;
+  border-bottom: 2px solid #eee;
+  position: relative;
+  top: 8px;
+}
+
+.news-link {
+  display: block;
+}
+
+.news-item {
+  position: relative;
+  margin-top: 10px;
+}
+
+.news-item-title,
+.news-item-brief,
+.news-item-date {
+  display: block;
+  width: 60%;
+  position: relative;
+  left: 40%;
+  margin-bottom: 10px;
+}
+
+.news-item-title {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.news-item-thumbnail {
+  width: 40%;
+  position: absolute;
+  top: 0;
+}
+.news-item-thumbnail img {
+  width: 80%;
+  display: block;
+}
+figcaption {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.news-more {
+  position: absolute;
+  top: 0;
+  right: 0;
+} */
 
 /* 슬로건 */
 .slogan {
