@@ -2,6 +2,7 @@
 @import url(./normalize.css);
 @import url(./reset.css);
 @import url(./fontello.css);
+@import url(./module.css);
 
 /* 숨김 콘텐츠 */
 .a11y-hidden,
@@ -749,6 +750,11 @@ body {
   text-align: center;
 }
 
+.news-item-thumbnail img {
+  box-shadow: 0 15px 10px 5px #ccc;
+  margin-bottom: 15px;
+}
+
 .news-more {
   /*
     position은 블록형태이다. 인라인아님!
@@ -762,64 +768,118 @@ body {
   right: -8px;
 }
 
-/* .news-title {
-  color: #e85e2c;
-  font-size: 16px;
-  font-weight: 500;
-  padding-bottom: 15px;
+/* 신규 이벤트 및 관련 사이트 */
+.event {
+  border-bottom: 1px solid #aaa;
 }
 
-.news-title::after {
-  content: "";
-  display: block;
-  border-bottom: 2px solid #eee;
-  position: relative;
-  top: 8px;
+.event-title {
+  /* 신규이벤트는 좌측으로 인라인블록 */
+  display: inline-block;
 }
 
-.news-link {
-  display: block;
+.event-button-wrapper {
+  /*
+    파이어폭스에선 버튼에 높이값을 주면 overflow가 먹지않아서 부모요소에 높이값을 지정후
+    버튼에 높이값 100%를 준다.
+  */
+  /* 탭키눌렀을때 아웃라인 보이게하기위해 20px 지정하고 자식은 18px 다시 줌 */
+  height: 20px;
+  overflow: hidden;
+  /* 아이콘밑에 작은 여백을 없애기위해 flex모델 사용 */
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  /* IE 적용안되서 margin, padding줘서 여백띄움! */
+  gap: 5px;
+  /* 버튼은 오른쪽으로 플롯시킴 */
+  float: right;
 }
 
-.news-item {
-  position: relative;
+#eventDetail {
+  /*
+    플롯한것 때문에 밑에 박스에 clear: both;
+    같이 묶이지 않은 것 때문에 부모요소에 flow-root를 줘도 안먹힘
+  */
+  clear: both;
+  /* padding-top: 10px; */
+}
+
+/* IR 기법 -> Image Replacement */
+.event-button {
+  width: 19px;
+  /* height: 100%; */
+  height: 18px;
+  border: 0;
+  padding: 18px 0 0 0;
+  background: url(./images/back_forward.png);
+}
+
+.event-button:focus {
+  outline-offset: -2px;
+}
+
+.event-button-next {
+  background-position: -36px 0;
+}
+
+.event-thumbnail,
+.event-brief {
+  margin: 10px 0;
+}
+
+.event-thumbnail img {
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #ccc;
+}
+
+.event-brief {
+  line-height: 1.5;
+}
+
+.related {
   margin-top: 10px;
 }
 
-.news-item-title,
-.news-item-brief,
-.news-item-date {
-  display: block;
-  width: 60%;
-  position: relative;
-  left: 40%;
-  margin-bottom: 10px;
-}
-
-.news-item-title {
-  font-weight: 500;
-  font-size: 14px;
-}
-
-.news-item-thumbnail {
-  width: 40%;
-  position: absolute;
-  top: 0;
-}
-.news-item-thumbnail img {
-  width: 80%;
-  display: block;
-}
-figcaption {
+.related-list {
+  background-color: #fff;
+  border: 1px solid #aaa;
+  border-radius: 5px;
   margin-top: 10px;
-  font-size: 15px;
+  /*
+    이 요소들을 시작하는 지점에 넣어야함 (트리거)
+    만약 hover에 넣어주면 급작스럽게 끝맺음!
+  */
+  /* transition-property: background-color;
+  transition-duration: 500ms; */
+  height: 27px;
+  overflow: hidden;
+  /* 높이 시간 지난 후 패딩값 늘어난 것 시작하도록 지연시간 400ms 준 것 */
+  transition: height 400ms 0ms, padding 400ms 400ms;
+  padding: 0;
 }
 
-.news-more {
-  position: absolute;
-  top: 0;
-  right: 0;
-} */
+.related-list li {
+  /* background-color: yellow; */
+  height: 25px;
+  display: flex;
+  flex-flow: row nowrap;
+  /* li가 딱 가운데 오도록 해줌 */
+  align-items: center;
+  padding: 0 5px;
+}
+
+.related-list a {
+  /* background-color: palegoldenrod; */
+  flex-grow: 1;
+  padding: 0 10px;
+}
+
+.related-list:hover,
+.related-list:focus {
+  height: 147px;
+  padding: 10px 0;
+}
 
 /* 슬로건 */
 .slogan {
