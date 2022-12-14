@@ -1,5 +1,13 @@
 @import url(./normalize.css);
 @import url(./reset.css);
+/* 숨김 컨텐츠 */
+.a11y-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
 
 /* 기본스타일 */
 *,
@@ -14,7 +22,7 @@ html {
 
 /* 본문스타일 */
 body {
-  background: #ffc;
+  background: #ccc;
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
@@ -36,16 +44,137 @@ body {
 }
 /* 헤더 */
 .header {
-  background: pink;
+  background: #fff;
+  border-radius: 0 0 15px 15px;
   padding: 0 30px;
+  position: relative;
+}
+.logo {
+  position: absolute;
+  top: 45px;
+  left: 60px;
+  z-index: 999;
 }
 
 .member {
-  background-color: skyblue;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  padding: 4px 0;
+  margin-right: -10px;
 }
 
-.logo {
-  background-color: lime;
+.member a {
+  padding: 6px 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+.divider {
+  vertical-align: 1px;
+}
+
+.navigation {
+  /* background-color: gold; */
+  padding-bottom: 40px;
+}
+
+.menu {
+  background: #e85e2c
+    linear-gradient(
+      to bottom,
+      #ef9126 0%,
+      #e85e2c 35%,
+      #e85e2c 70%,
+      #ef9126 100%
+    );
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding-left: 230px;
+  border-top: 2px solid #000;
+  border-radius: 0 0 5px 5px;
+  height: 47px;
+}
+
+.menu-item {
+  border-left: 2px solid #fff;
+  position: relative;
+}
+
+.menu-button {
+  border: 0;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 0 22px;
+  line-height: 45px;
+  background-color: transparent;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
+}
+
+.is-active .menu-button {
+  color: #ff0;
+}
+
+.is-active .menu-button::after {
+  display: block;
+  content: "";
+  border-top: 2px solid #000;
+}
+
+.sub-menu {
+  /* background-color: lime; */
+  /* display: flex; */
+  flex-flow: row nowrap;
+  position: absolute;
+  top: 47px;
+  display: none;
+  padding: 4px 0;
+}
+.menu-html,
+.menu-css,
+.menu-standards {
+  left: 0;
+}
+
+.menu-accessibility,
+.menu-qna,
+.menu-archive {
+  right: 0;
+}
+
+.sub-menu a {
+  color: inherit;
+  text-decoration: none;
+  padding: 6px 4px;
+  display: inline-block;
+  margin: 0 5px;
+  /* background-color: red; */
+}
+
+.sub-menu a::before {
+  content: "\e805";
+  font-family: "fontello";
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.is-active .sub-menu {
+  display: flex;
+  white-space: nowrap;
 }
 
 /* 비주얼 */
