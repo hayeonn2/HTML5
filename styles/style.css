@@ -1003,40 +1003,51 @@ body {
 
 /* 푸터 */
 .footer {
-  padding: 15px 0;
   background: #ccc
     linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
 }
-
 .footer-inner {
   /* background-color: pink; */
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
-  position: relative;
+  gap: 20px;
+  padding: 20px 0;
+}
+.footer-logo {
+  /* background-color: aqua; */
+  width: 150px;
+  padding: 20px 0 0 35px;
 }
 
-.footer-logo {
-  display: block;
-  margin: 0 auto;
+.footer-inner-wrapper {
+  /* background-color: lime; */
+  /* 영역 확장 */
+  flex-grow: 1;
 }
 
 .guide-list {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
-  background-color: #666;
-  padding: 10px 30px;
-  border-radius: 20px;
-  margin: 10px 0;
+  background-color: #7b8385;
   color: #fff;
-}
-
-.guide-list li {
-  padding: 0 15px;
+  padding: 4px 45px;
+  justify-content: space-between;
   text-transform: uppercase;
+  border-radius: 30px;
 }
 
-.address {
-  line-height: 1.5;
+.guide-list a {
+  display: block;
+  padding: 6px 10px;
+}
+
+.address,
+.copyright {
+  font-size: 1.3rem;
+  display: block;
+  margin-top: 10px;
+}
+
+.badge-wrapper {
+  /* background-color: salmon; */
 }
