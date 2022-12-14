@@ -17,6 +17,11 @@ body {
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   font-weight: 400;
+  font-size: 1.4rem;
+}
+
+html {
+  font-size: 10px;
 }
 
 /* 레이아웃 */
@@ -32,15 +37,14 @@ body {
 .header {
   background: #fff;
   padding: 0 30px;
-  height: 15vh;
   border-radius: 0 0 15px 15px;
 }
 
 .member {
   background-color: pink;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
+  /* display: flex; */
+  /* flex-flow: row nowrap; */
+  /* justify-content: flex-end; */
 }
 
 /* 링크 스타일 */
@@ -90,31 +94,32 @@ body {
 
 /* 비주얼 */
 .visual {
-  background: orange;
-  height: 10vh;
+  height: 120px;
 }
 
 /* 메인 */
 .main {
-  background: lightblue;
+  background: #fff;
   /* height: 50vh; */
   min-height: 450px; /* 최소 높이 줘서 레이아웃 유지 */
-  width: 940px;
-  display: flex;
+  /* width: 940px; */
+  /* display: flex; */
   /* stretch 시킴 row: 세로쭉 - column: 가로쭉 */
   /* flex-direction: row; */
   /* 교차축 : 글자만큼 실제 높이만큼 크기만 가짐 (flex-start)교차축 기준 시작점) direction이 가장중요 */
-  align-items: flex-start;
+  /* align-items: flex-start; */
   /* 줄바꿈을 허용하겠다는 뜻 wrap */
   /* flex-wrap: nowrap; */
   /* 동시에 두가지 같이줌! */
-  flex-flow: row wrap;
+  /* flex-flow: row wrap; */
   /* 동등하게 여백줌 */
   /* justify-content: space-evenly; */
-  justify-content: space-between;
-  padding: 30px;
+  /* justify-content: space-between; */
+  /* padding: 30px; */
   /* justify-content: space-around;
   padding: 0 15px; */
+  display: flow-root;
+  padding: 30px 15px;
 }
 
 /*.main::after {
@@ -124,8 +129,11 @@ body {
   display: block;
 */
 
+.group {
+  float: left;
+  margin: 0 15px;
+}
 .group1 {
-  background-color: violet;
   width: 250px;
   /* width: 500px; */
   /* 2 3 1 : 2, 3은 order=0, 1을 줘서 가장 뒤로 : float: left, right 역할 */
@@ -134,13 +142,11 @@ body {
   /* flex-shrink: 2; */
 }
 .group2 {
-  background-color: salmon;
   width: 380px;
   /* 나머지 너비중 1/4 */
   /* flex-shrink: 1; */
 }
 .group3 {
-  background-color: gold;
   /* 남은 영역을 모두 차지함 */
   /* flex-grow: 1; */
   width: 190px;
@@ -158,10 +164,81 @@ body {
   color: #000;
 } */
 
+/* 신규 이벤트 및 관련 사이트 */
+.gradient-effect {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+}
+
+.text-xl {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.accent-color {
+  color: orangered;
+}
+
+/* 인기 사이트 */
+.margin-top-default {
+  /* 여백을 띄울 목적 favorite바깥에 있는 것에 줌 */
+  margin-top: 20px;
+}
+
+.event {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #aaa;
+}
+
+.event-button-wrapper {
+  /* background-color: #ff0; */
+  /* overflow: hidden; */
+  /* height: 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center; */
+  /* padding: 2px; */
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.event-button {
+  width: 19px;
+  height: 18px;
+  border: 0;
+  padding: 0;
+  /* aria-label 추가후 텍스트 지워서 text-indent지워도 됨 */
+  /* text-indent: -9999px; */
+  background: url(./images/back_forward.png) no-repeat;
+}
+
+.event-button-next {
+  background-position: 100% 0;
+}
+
+.event-thumbnail,
+.event-brief {
+  margin: 10px 0;
+}
+
+.event-thumbnail img {
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #ccc;
+}
+
+.related {
+  margin-top: 10px;
+}
+
 /* 슬로건 */
 .slogan {
   background: lightgreen;
-  height: 10vh;
   clear: both;
 }
 
@@ -171,6 +248,5 @@ body {
 }
 
 .footer-inner {
-  height: 15vh; /* 15vh = 15% */
   background: lightgray;
 }
