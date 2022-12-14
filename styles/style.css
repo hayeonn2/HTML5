@@ -342,6 +342,7 @@ body {
 .main {
   background: #fff;
   min-height: 50vh;
+  /* 메인에 flow-root를 주고 안전장치로 슬로건에도 clear:both를 준다. */
   display: flow-root; /*모던방식*/
   /* overflow는 독립적인 블록을 가지려고 한다. */
   /* BFC 찾아보기 - block format context */
@@ -881,19 +882,161 @@ body {
   padding: 10px 0;
 }
 
+/* 인기 사이트 */
+.favorite {
+  position: relative;
+}
+
+.favorite-list {
+  /* background-color: yellow; */
+  list-style-type: none;
+  /* counter-reset: number 10; */
+}
+.favorite-list li {
+  margin-top: 10px;
+  /* 카운터 함수!! 숫자를 순서대로 나오게 해줌 */
+  counter-increment: number;
+  /* 글자와 같은 미들라인에 오게하기 위해 사용 (글자가 커졌을때도) */
+  /* display: flex;
+  flex-flow: row nowrap;
+  align-items: center; */
+  /* 안되는 이유: li:before까지 포함해 글씨도 중앙정렬로 옴 그래서 margin-left: auto써줌 */
+  /* justify-content: space-between; */
+  position: relative;
+}
+.favorite-list li::before {
+  /* 숫자가 바로 나온다! 순서대로 */
+  content: counter(number);
+  background-color: #aaa;
+  color: #fff;
+  /* padding: 1px 5px; */
+  font-size: 1.2rem;
+  margin-right: 5px;
+  border-radius: 3px;
+  display: inline-block;
+  width: 1.5em;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* .favorite-list a {
+  background-color: aqua;
+  영역확장 시켜서 이미지들을 오른쪽으로 보내줌
+  flex-grow: 1;
+} */
+
+.up,
+.stop,
+.down {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -6px;
+  /* transform이 가능하면 flex도 가능! 해서 플렉스가 더 나음 */
+  /* transform: translateY(-50%); */
+  /* display: inline-block; */
+  width: 20px;
+  height: 11px;
+  /* flex와 함께쓰면 알아서 이미지가 오른쪽으로 붙는다. */
+  /* margin-left: auto; */
+  background: url(./images/rank.png) no-repeat 100% 0;
+}
+
+.stop {
+  /* x축 100%주면 가장 오른쪽으로 위치함 */
+  background-position: 100% 48%;
+}
+.down {
+  background-position: 100% 100%;
+}
+
+.favorite-more {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
+
 /* 슬로건 */
 .slogan {
-  background: lightgreen;
-  height: 10vh;
+  /* 안전장치로 한번 더 해줌 (추가로 준 것) */
+  clear: both;
+  position: relative;
+  padding: 15px 100px 15px 180px;
+}
+
+.slogan-title {
+  width: 110px;
+  height: 83px;
+  /* 글자를 커피잔 뒤에 숨기기위해 가운데 정렬 */
+  text-align: center;
+  line-height: 83px;
+  /* relative였는데 커피잔을 밑으로 내리기 위해 슬로건 기준으로 absolute로 다시 변경 */
+  position: absolute;
+  bottom: -25px;
+  left: 35px;
+}
+
+.slogan-title::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./images/coffee.png) no-repeat;
+}
+
+.slogan-content {
+  color: #a09784;
+}
+
+.slogan-content q::before {
+  font-size: 3rem;
+  /* 인라이늘록 상태로 만들고 transform 사용하기 (배경색 넣어서 보면 더 잘 보임) */
+  display: inline-block;
+  transform: translateY(10px);
+}
+.slogan-content q::after {
+  content: "";
 }
 
 /* 푸터 */
 .footer {
+  padding: 15px 0;
   background: #ccc
     linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
 }
 
 .footer-inner {
-  height: 15vh; /* 15vh = 15% */
-  background: lightgray;
+  /* background-color: pink; */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  position: relative;
+}
+
+.footer-logo {
+  display: block;
+  margin: 0 auto;
+}
+
+.guide-list {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background-color: #666;
+  padding: 10px 30px;
+  border-radius: 20px;
+  margin: 10px 0;
+  color: #fff;
+}
+
+.guide-list li {
+  padding: 0 15px;
+  text-transform: uppercase;
+}
+
+.address {
+  line-height: 1.5;
 }
